@@ -1,12 +1,12 @@
 import cv2
 import cvlib as cv
-import numpy as np
 
 vid = cv2.VideoCapture(0)
 cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+# Loading "Mouths.xml" to train the clasiifier
 mouth_cascade = cv2.CascadeClassifier('Mouths.xml')
 bw_threshold = 80
-# count = 0;
+
 while (1):
     ret, frame = vid.read()
     frame = cv2.flip(frame, 1)
@@ -30,9 +30,9 @@ while (1):
                     cv2.putText(frame, 'NOT WEARING MASK', (30, 30),
                                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
     cv2.imshow('image', frame)
-    if cv2.waitKey(15) & 0xFF == ord('s'):
+    # Press c on keyboard to exit
+    if cv2.waitKey(15) & 0xFF == ord('c'):
         break
-
 
 cv2.destroyAllWindows()
 vid.release()
