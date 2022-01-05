@@ -10,9 +10,11 @@ bw_threshold = 80
 while (1):
     ret, frame = vid.read()
     frame = cv2.flip(frame, 1)
+    # Converts the image from BGR to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     (thresh, bw) = cv2.threshold(gray, bw_threshold, 255, cv2.THRESH_BINARY)
     faces, confidences = cv.detect_face(frame)
+    # Detects the mouth in the image
     if (len(faces) == 0):
         cv2.putText(frame, 'NO FACE DETECTED', (30, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
