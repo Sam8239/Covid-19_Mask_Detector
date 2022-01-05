@@ -22,7 +22,7 @@ while (1):
 
         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (w, h), (0, 128, 0), 2)
-        mask = mouth_cascade.detectMultiScale(gray, 1.5, 6)
+        mask = mouth_cascade.detectMultiScale(gray, 1.5, 5)
         if (len(mask) == 0):
             cv2.putText(frame, 'THANK YOU FOR WEARING MASK', (30, 30),
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 128, 0), 2, cv2.LINE_AA)
