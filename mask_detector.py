@@ -2,7 +2,7 @@ import cv2
 import cvlib as cv
 
 vid = cv2.VideoCapture(0)
-cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+cv2.namedWindow('Mask Detector', cv2.WINDOW_NORMAL)
 # Loading "Mouths.xml" to train the clasiifier
 mouth_cascade = cv2.CascadeClassifier('Mouths.xml')
 bw_threshold = 80
@@ -22,7 +22,7 @@ while (1):
 
         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (w, h), (0, 128, 0), 2)
-        mask = mouth_cascade.detectMultiScale(gray, 1.5, 5)
+        mask = mouth_cascade.detectMultiScale(gray, 1.5, 6)
         if (len(mask) == 0):
             cv2.putText(frame, 'THANK YOU FOR WEARING MASK', (30, 30),
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 128, 0), 2, cv2.LINE_AA)
@@ -31,10 +31,9 @@ while (1):
                 if(y < my < y+h):
                     cv2.putText(frame, 'NOT WEARING MASK', (30, 30),
                                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
-    cv2.imshow('image', frame)
+    cv2.imshow('Mask Detector', frame)
     # Press c on keyboard to exit
     if cv2.waitKey(10) & 0xFF == ord('c'):
         break
-
 cv2.destroyAllWindows()
 vid.release()
