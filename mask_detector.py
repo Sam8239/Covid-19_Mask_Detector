@@ -14,7 +14,7 @@ while (1):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     (thresh, bw) = cv2.threshold(gray, bw_threshold, 255, cv2.THRESH_BINARY)
     faces, confidences = cv.detect_face(frame)
-    # Detects the mouth in the image
+    # Detects the face in the image
     if (len(faces) == 0):
         cv2.putText(frame, 'NO FACE DETECTED', (30, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
@@ -33,7 +33,7 @@ while (1):
                                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
     cv2.imshow('image', frame)
     # Press c on keyboard to exit
-    if cv2.waitKey(15) & 0xFF == ord('c'):
+    if cv2.waitKey(10) & 0xFF == ord('c'):
         break
 
 cv2.destroyAllWindows()
