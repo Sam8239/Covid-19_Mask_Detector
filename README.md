@@ -44,10 +44,10 @@ Start the project
   
 ## Screenshots
 ### Wearing a Mask
-<img src="./Screenshot/wearing_mask" alt="logo" height="400px" width="400px"><br>
+<img src="./Screenshot/wearing_mask.jpg" alt="wearing_mask" height="400px" width="400px"><br>
 
 ### Not Wearing a Mask
-<img src="./Screenshot/not_wearing_mask" alt="logo" height="400px" width="400px"><br>
+<img src="./Screenshot/not_wearing_mask.jpg" alt="not_wearing_mask" height="400px" width="400px"><br>
 
 ### No Face Detected
-<img src="./Screenshot/no_face_detected" alt="logo" height="400px" width="400px">
+<img src="./Screenshot/no_face_detected.jpg" alt="no_face_detected" height="400px" width="400px">
