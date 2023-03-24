@@ -29,9 +29,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  pip install cvlib 
-  pip install opencv-python
-  pip install tensorflow
+  pip install -r requirements.txt
 ```
 
 Start the project
